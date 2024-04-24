@@ -244,4 +244,6 @@ MonoBehaviour:
   musicPlayer: {fileID: 9177207738710451645}
   next: {fileID: 0}
   previous: {fileID: 0}
+  play: {fileID: 0}
+  pause: {fileID: 0}
   genres: {fileID: 0}
