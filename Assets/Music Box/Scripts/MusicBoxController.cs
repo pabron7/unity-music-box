@@ -7,12 +7,17 @@ using TMPro;
 public class MusicBoxController : MonoBehaviour
 {
 
+    [Header("")]
     public TextMeshProUGUI songNameUI;
     public TextMeshProUGUI songThemeUI;
     public Playlist playlist;
     public AudioSource musicPlayer;
+    [Header("Buttons")]
     public Button next;
     public Button previous;
+    public Button play;
+    public Button pause;
+
     public TMP_Dropdown genres;
     List<SongEntry> currentPlaylist;
     int songIndex = 0;
@@ -21,6 +26,8 @@ public class MusicBoxController : MonoBehaviour
     {
         next.onClick.AddListener(IncreaseSongIndex);
         previous.onClick.AddListener(DecreaseSongIndex);
+        play.onClick.AddListener(PlaySong);
+        pause.onClick.AddListener(PauseSong);
         
         UpdatePlaylist(playlist.Beginning);
         UpdateSong(songIndex);
@@ -42,7 +49,17 @@ public class MusicBoxController : MonoBehaviour
     private void UpdateSong(int i)
     {
         musicPlayer.clip = currentPlaylist[i].audio;
+        PlaySong();
+    }
+
+    private void PlaySong()
+    {
         musicPlayer.Play();
+    }
+
+    private void PauseSong()
+    {
+        musicPlayer.Pause();
     }
 
     private void UpdateUI(int i)

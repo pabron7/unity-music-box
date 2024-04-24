@@ -1137,6 +1137,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 145626240}
     - target: {fileID: 7080054132257864847, guid: ac20292a5a0674a6a98a2d2fd25c62cc, type: 3}
+      propertyPath: play
+      value: 
+      objectReference: {fileID: 1527371104}
+    - target: {fileID: 7080054132257864847, guid: ac20292a5a0674a6a98a2d2fd25c62cc, type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 459717868}
+    - target: {fileID: 7080054132257864847, guid: ac20292a5a0674a6a98a2d2fd25c62cc, type: 3}
       propertyPath: genres
       value: 
       objectReference: {fileID: 67477628}
