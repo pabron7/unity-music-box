@@ -603,6 +603,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5320140656784524278}
     - target: {fileID: 7080054132257864847, guid: ac20292a5a0674a6a98a2d2fd25c62cc, type: 3}
+      propertyPath: playlists
+      value: 
+      objectReference: {fileID: 8492171040768068302}
+    - target: {fileID: 7080054132257864847, guid: ac20292a5a0674a6a98a2d2fd25c62cc, type: 3}
       propertyPath: songNameUI
       value: 
       objectReference: {fileID: 1825656212771013971}
@@ -610,6 +614,10 @@ PrefabInstance:
       propertyPath: songThemeUI
       value: 
       objectReference: {fileID: 7311195853140444506}
+    - target: {fileID: 7080054132257864847, guid: ac20292a5a0674a6a98a2d2fd25c62cc, type: 3}
+      propertyPath: playlistsDropdown
+      value: 
+      objectReference: {fileID: 8492171040768068302}
     - target: {fileID: 7144801865697318888, guid: ac20292a5a0674a6a98a2d2fd25c62cc, type: 3}
       propertyPath: m_Name
       value: Music Box
@@ -632,6 +640,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 487006672}
     m_Modifications:
+    - target: {fileID: 5452341078540629738, guid: 33750bf0d856541378c09f2e4316a207, type: 3}
+      propertyPath: m_Name
+      value: PlaylistsDropdown
+      objectReference: {fileID: 0}
     - target: {fileID: 6347489023453722578, guid: 33750bf0d856541378c09f2e4316a207, type: 3}
       propertyPath: m_Name
       value: Music Box Renderer
@@ -720,6 +732,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1742685517}
+    - target: {fileID: 8993930003133900034, guid: 33750bf0d856541378c09f2e4316a207, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdatePlaylist
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

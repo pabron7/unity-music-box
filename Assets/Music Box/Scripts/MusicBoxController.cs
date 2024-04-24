@@ -7,19 +7,22 @@ using TMPro;
 public class MusicBoxController : MonoBehaviour
 {
 
-    [Header("")]
+    [Header("Attachments")]
     public TextMeshProUGUI songNameUI;
     public TextMeshProUGUI songThemeUI;
     public Playlist playlist;
     public AudioSource musicPlayer;
+    public TMP_Dropdown playlistsDropdown;
+
     [Header("Buttons")]
     public Button next;
     public Button previous;
     public Button play;
     public Button pause;
 
-    public TMP_Dropdown genres;
+
     List<SongEntry> currentPlaylist;
+
     int songIndex = 0;
 
     void Start()
@@ -29,24 +32,18 @@ public class MusicBoxController : MonoBehaviour
         play.onClick.AddListener(PlaySong);
         pause.onClick.AddListener(PauseSong);
         
-        UpdatePlaylist(playlist.Beginning);
-        UpdateSong(songIndex);
+        SelectPlaylist(playlist.Beginning);
+        SelectSong(songIndex);
      
         UpdateUI(songIndex);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-
-    private void UpdatePlaylist(List<SongEntry> _playlist)
+    private void SelectPlaylist(List<SongEntry> _playlist)
     {
         currentPlaylist = _playlist;
     }
 
-    private void UpdateSong(int i)
+    private void SelectSong(int i)
     {
         musicPlayer.clip = currentPlaylist[i].audio;
         PlaySong();
@@ -60,6 +57,11 @@ public class MusicBoxController : MonoBehaviour
     private void PauseSong()
     {
         musicPlayer.Pause();
+    }
+
+    private void ResetIndex()
+    {
+        songIndex = 0;
     }
 
     private void UpdateUI(int i)
@@ -92,14 +94,14 @@ public class MusicBoxController : MonoBehaviour
     {
         if (songIndex>=currentPlaylist.Count-1)
         {
-            songIndex = 0;
+            ResetIndex();
         }else
         {
             songIndex++;
         }
         
         UpdateUI(songIndex);
-        UpdateSong(songIndex);
+        SelectSong(songIndex);
         
     }
 
@@ -113,34 +115,38 @@ public class MusicBoxController : MonoBehaviour
         }
        
         UpdateUI(songIndex);
-        UpdateSong(songIndex);
+        SelectSong(songIndex);
     }
 
-    public void UpdateGenre()
+    public void UpdatePlaylist()
     {
-        switch (genres.value)
+        switch (playlistsDropdown.value)
         {
             case 0:
-                UpdatePlaylist(playlist.Beginning);
-                UpdateSong(songIndex);
+                ResetIndex();
+                SelectPlaylist(playlist.Beginning);
+                SelectSong(songIndex);
                 UpdateUI(songIndex);
                 break;
 
             case 1:
-                UpdatePlaylist(playlist.Journey);
-                UpdateSong(songIndex);
+                ResetIndex();
+                SelectPlaylist(playlist.Journey);
+                SelectSong(songIndex);
                 UpdateUI(songIndex);
                 break;
 
             case 2:
-                UpdatePlaylist(playlist.Combat);
-                UpdateSong(songIndex);
+                ResetIndex();
+                SelectPlaylist(playlist.Combat);
+                SelectSong(songIndex);
                 UpdateUI(songIndex);
                 break;
 
             case 3:
-                UpdatePlaylist(playlist.Running);
-                UpdateSong(songIndex);
+                ResetIndex();
+                SelectPlaylist(playlist.Running);
+                SelectSong(songIndex);
                 UpdateUI(songIndex);
                 break;
         }
